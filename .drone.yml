@@ -15,8 +15,6 @@ services:
     environment:
       SA_PASSWORD: dev
       ACCEPT_EULA: Y
-    ports:
-      - "5434:1433"
 
   - name: localstack
     image: localstack/localstack:0.14.3
@@ -113,8 +111,6 @@ services:
     environment:
       SA_PASSWORD: dev
       ACCEPT_EULA: Y
-    ports:
-      - "5434:1433"
   - name: localstack
     image: localstack/localstack:0.14.3
     environment:
