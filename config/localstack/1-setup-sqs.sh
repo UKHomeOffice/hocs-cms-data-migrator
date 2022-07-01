@@ -6,7 +6,7 @@ export AWS_SECRET_ACCESS_KEY=UNSET
 export AWS_DEFAULT_REGION=eu-west-2
 
 ## make sure that localstack is running in the pipeline
-until curl http://localstack:4566/health --silent | grep -q "running"; do
+until curl http://localstack:4566/health --silent | grep -q "\"sqs\": \"available\""; do
    sleep 5
    echo "Waiting for LocalStack to be ready..."
 done
