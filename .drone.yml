@@ -35,7 +35,7 @@ steps:
     image: quay.io/ukhomeofficedigital/hocs-base-image-build:1.0.5
     environment:
       SPRING_PROFILES_ACTIVE: "localstack"
-      DB_PASSWORD: "Development1"
+      DB_PASSWORD: "Development01"
       LOCALSTACK_CONFIG_HOST: "localstack"
     commands:
       - ./gradlew clean build --no-daemon
