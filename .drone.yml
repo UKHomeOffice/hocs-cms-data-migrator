@@ -161,8 +161,7 @@ kind: pipeline
 type: kubernetes
 name: deploy tag
 depends_on:
-  - build
-
+  - build tag
 trigger:
   branch:
     - main
@@ -177,7 +176,7 @@ steps:
       ENVIRONMENT: cs-dev-migration
       KUBE_TOKEN:
         from_secret: hocs_cms_data_migrator_cs_dev_migration
-      KUBE_SERVER: https://kube-api-notprod.notprod.acp.homeoffice.gov.uk  
+      KUBE_SERVER: https://kube-api-notprod.notprod.acp.homeoffice.gov.uk
     commands:
       - cd kube
       - ./deploy.sh
