@@ -11,5 +11,5 @@ until curl http://localstack:4566/health --silent | grep -q "\"sqs\": \"availabl
    echo "Waiting for LocalStack to be ready..."
 done
 
-aws sqs --endpoint-url=http://localstack:4566 create-queue --queue-name notify-queue-dlq
-aws sqs --endpoint-url=http://localstack:4566 create-queue --queue-name notify-queue --attributes '{"RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:eu-west-2:000000000000:notify-queue-dlq\",\"maxReceiveCount\":2}"}'
+aws sqs --endpoint-url=http://localstack:4566 create-queue --queue-name migration-queue-dlq
+aws sqs --endpoint-url=http://localstack:4566 create-queue --queue-name migration-queue --attributes '{"RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:eu-west-2:000000000000:migration-queue-dlq\",\"maxReceiveCount\":2}"}'

@@ -34,7 +34,7 @@ steps:
   - name: test project
     image: quay.io/ukhomeofficedigital/hocs-base-image-build:1.0.5
     environment:
-      SPRING_PROFILES_ACTIVE: "local"
+      SPRING_PROFILES_ACTIVE: "localstack"
       DB_HOST: "sqlserver"
       LOCALSTACK_CONFIG_HOST: "localstack"
     commands:
@@ -129,7 +129,7 @@ steps:
   - name: test project
     image: quay.io/ukhomeofficedigital/hocs-base-image-build:1.0.5
     environment:
-      SPRING_PROFILES_ACTIVE: "local"
+      SPRING_PROFILES_ACTIVE: "localstack"
       DB_HOST: "sqlserver"
       LOCALSTACK_CONFIG_HOST: "localstack"
     commands:
