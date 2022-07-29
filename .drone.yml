@@ -60,8 +60,6 @@ steps:
         - ${DRONE_COMMIT_SHA}
         - latest
     environment:
-      PACKAGE_TOKEN:
-        from_secret: PACKAGE_TOKEN
       DOCKER_PASSWORD:
         from_secret: QUAY_ROBOT_TOKEN
       DOCKER_USERNAME: ukhomeofficedigital+hocs_quay_robot
