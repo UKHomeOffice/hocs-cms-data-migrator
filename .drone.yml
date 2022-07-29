@@ -37,6 +37,8 @@ steps:
       SPRING_PROFILES_ACTIVE: "localstack"
       DB_PASSWORD: "Development01"
       LOCALSTACK_CONFIG_HOST: "localstack"
+      PACKAGE_TOKEN:
+        from_secret: PACKAGE_TOKEN
     commands:
       - ./gradlew clean build --no-daemon
     depends_on:
