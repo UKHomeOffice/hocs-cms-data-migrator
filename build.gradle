@@ -11,6 +11,14 @@ sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
+	mavenLocal()
+	maven {
+		url = "https://maven.pkg.github.com/UKHomeOffice/hocs-migrationt-schema"
+		credentials {
+			username = "Anonymous"
+			password = System.getenv("PACKAGE_TOKEN")
+		}
+	}
 }
 
 dependencies {
@@ -23,6 +31,7 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-aws-messaging:2.2.6.RELEASE'
 	implementation  group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.1.0.jre8'
 	implementation 'net.logstash.logback:logstash-logback-encoder:7.2'
+	implementation 'uk.gov.digital.ho.hocs:hocs-migration-schema:0.0.1'
 
 	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
 
