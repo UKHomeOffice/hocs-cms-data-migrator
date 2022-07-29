@@ -13,7 +13,7 @@ repositories {
 	mavenCentral()
 	mavenLocal()
 	maven {
-		url = "https://maven.pkg.github.com/UKHomeOffice/hocs-migrationt-schema"
+		url = "https://maven.pkg.github.com/UKHomeOffice/hocs-migration-schema"
 		credentials {
 			username = "Anonymous"
 			password = System.getenv("PACKAGE_TOKEN")
