@@ -5,7 +5,7 @@ spring:
         h2:
           mem: testdb
     driverClassName: org.h2.Driver
-    username: sa
-    password: password
+    username: SA
+    password: Password01
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect

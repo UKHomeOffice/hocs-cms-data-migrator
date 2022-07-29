@@ -19,8 +19,7 @@ public class SQSClient {
 
     private final String queueUrl;
 
-    public SQSClient(AmazonSQSAsync sqs,
-                     @Value("${aws.sqs.queue-name}")  String queueName) {
+    public SQSClient(AmazonSQSAsync sqs, @Value("${aws.sqs.queue-name}")  String queueName) {
         this.sqs = sqs;
         this.queueUrl = sqs.getQueueUrl(queueName).getQueueUrl();
     }
