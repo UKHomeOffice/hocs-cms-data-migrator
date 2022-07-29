@@ -15,7 +15,6 @@ repositories {
 	maven {
 		url = "https://maven.pkg.github.com/UKHomeOffice/hocs-migration-schema"
 		}
-	}
 }
 
 dependencies {
