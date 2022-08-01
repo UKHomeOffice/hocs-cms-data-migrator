@@ -12,6 +12,14 @@ sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
+	mavenLocal()
+	maven {
+		url = "https://maven.pkg.github.com/UKHomeOffice/hocs-migration-schema"
+		credentials {
+			username = "Anonymous"
+			password = System.getenv("PACKAGE_TOKEN")
+		}
+	}
 }
 
 dependencies {
@@ -28,6 +36,7 @@ dependencies {
 	implementation 'net.logstash.logback:logstash-logback-encoder:7.2'
 
 	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	implementation 'uk.gov.digital.ho.hocs:hocs-migration-schema:0.3.0'
 
 	compileOnly "org.projectlombok:lombok:${lombokVersion}"
 	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"

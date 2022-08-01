@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    networks:
+      - hocs-network
+    environment:
+      SA_PASSWORD: "Password01"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "5434:1433"
+
+  localstack:
+    image: localstack/localstack:0.14.3
+    ports:
+      - "4566:4566"
+    networks:
+      - hocs-network
+    environment:
+      HOSTNAME_EXTERNAL: localstack
+      DEFAULT_REGION: eu-west-2
+      SERVICES: sqs, sns
+      SQS_PROVIDER: "elasticmq"
+    volumes:
+      - ./config/localstack:/docker-entrypoint-initaws.d
+
+networks:
+  hocs-network:
