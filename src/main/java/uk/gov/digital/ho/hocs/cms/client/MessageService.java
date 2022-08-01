@@ -1,4 +1,4 @@
-package uk.gov.digital.ho.hocs.client;
+package uk.gov.digital.ho.hocs.cms.client;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package uk.gov.digital.ho.hocs.paylod;
+package uk.gov.digital.ho.hocs.cms.paylod;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +10,7 @@ import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import uk.gov.digital.ho.hocs.client.MessageService;
+import uk.gov.digital.ho.hocs.cms.client.MessageService;
 import uk.gov.digital.ho.hocs.payload.PayloadFile;
 
 import java.io.IOException;
