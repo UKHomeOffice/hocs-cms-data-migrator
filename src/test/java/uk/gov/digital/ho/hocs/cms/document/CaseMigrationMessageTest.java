@@ -12,13 +12,11 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CaseMigrationMessageTest {
         private final ObjectMapper objectMapper = new ObjectMapper();
@@ -59,25 +57,26 @@ class CaseMigrationMessageTest {
             caseDataItem.setName("type");
             caseDataItem.setValue("cms");
 
+            CaseDataItem caseDataItem1 = new CaseDataItem();
+            caseDataItem1.setName("test");
+            caseDataItem1.setValue("test");
+
             CaseAttachment caseAttachment = new CaseAttachment();
             caseAttachment.setDocumentType("pdf");
             caseAttachment.setPath("s3://");
             caseAttachment.setLabel("letter");
 
             CaseDetails caseDetails = new CaseDetails();
-            List<CaseDataItem> caseData = new ArrayList<>();
-            caseData.add(caseDataItem);
             caseDetails.setCaseType("cms");
-            caseDetails.setCaseData(caseData);
+            caseDetails.addCaseDataItem(caseDataItem);
+            caseDetails.addCaseDataItem(caseDataItem1);
             caseDetails.setSourceCaseId("001");
             caseDetails.setCreationDate("2020-07-01");
             caseDetails.setCaseStatus("Closed");
             caseDetails.setCaseStatusDate("2020-07-01");
             caseDetails.setCorrespondenceEmail("test@email.com");
             caseDetails.setCorrespondentName("test");
-            List<CaseAttachment> attachments = new ArrayList<>();
-            attachments.add(caseAttachment);
-            caseDetails.setCaseAttachments(attachments);
+            caseDetails.addCaseAttachment(caseAttachment);
             return caseDetails;
         }
 
