@@ -10,7 +10,6 @@ import com.networknt.schema.ValidationMessage;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 
