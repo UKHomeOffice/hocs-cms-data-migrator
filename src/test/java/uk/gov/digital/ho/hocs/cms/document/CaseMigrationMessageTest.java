@@ -83,17 +83,5 @@ class CaseMigrationMessageTest {
         private static InputStream inputStreamFromClasspath(String path) {
             return Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
         }
-
-        private boolean isValidJson(InputStream schemaStream, InputStream jsonStream) throws IOException {
-            byte[] jsonBytes = jsonStream.readAllBytes();
-            JsonNode json = objectMapper.readTree(jsonBytes);
-            JsonSchema schema = schemaFactory.getSchema(schemaStream);
-            Set<ValidationMessage> validationResult = schema.validate(json);
-            if (validationResult.isEmpty()) {
-                return jsonBytes.length < 256000;
-            } else {
-                return false;
-            }
-        }
     }
 
